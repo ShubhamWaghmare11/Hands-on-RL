@@ -1,1 +1,0 @@
-ALE Folder is required, otherwise it will give some errors
