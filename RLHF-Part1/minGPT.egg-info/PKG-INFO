@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: minGPT
+Version: 0.0.1
+Summary: A PyTorch re-implementation of GPT
+Author: Andrej Karpathy, Thomas Tumiel
+License: MIT

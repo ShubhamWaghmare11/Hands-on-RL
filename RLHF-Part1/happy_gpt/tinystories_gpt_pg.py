@@ -175,11 +175,11 @@ if __name__ == '__main__':
     train_config = Trainer.get_default_config()
     train_config.learning_rate = 5e-4 # Slightly adjusted learning rate
     train_config.num_workers = 4 # Use more workers if your machine supports it
-    train_config.log_every = 2000
-    train_config.generate_every = 5000
+    train_config.log_every = 10
+    train_config.generate_every = 50
     # TinyStories is huge, so 1 epoch is already a lot of training
     train_config.epochs = 1
-    train_config.compile = True # Use torch.compile for a speedup if available
+    train_config.compile = False 
     train_config.batch_size = 128 # Increase batch size if GPU memory allows
 
     trainer = Trainer(train_config, model, train_ds)
