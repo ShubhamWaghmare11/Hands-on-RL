@@ -136,7 +136,7 @@ if __name__ == '__main__':
     train_config.generate_every = 1000
     train_config.save_every = None
     train_config.epochs = 3
-    train_config.batch_size = 8
+    train_config.batch_size = 2
     train_config.compile = True
     trainer = Trainer(train_config, model, train_ds)
 
@@ -157,7 +157,7 @@ if __name__ == '__main__':
     sample_prompt = prompt_ds[0].to(device)
     idx = model.generate(sample_prompt, max_new_tokens=128, do_sample=True, top_k=30, stop_at=train_ds.tokenizer.eot_token).cpu()
     for j,generation in enumerate(idx):
-        print(f"Generation {j}:", train_ds.tokenizer.decode(generation))``
+        print(f"Generation {j}:", train_ds.tokenizer.decode(generation))
 
     # Plot the losses
     trainer.logger.plot({"Loss": ["Train", "Valid"]}, filename="summarize_sft.png")
